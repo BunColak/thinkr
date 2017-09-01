@@ -6,12 +6,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-        <%= link_to "Help", "#", class: "nav-item nav-link"%>
-        <%= link_to "About", "#", class: "nav-item nav-link"%>
-        <%= link_to "Contact", "#", class: "nav-item nav-link"%>
+        <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
+        <%= link_to "Help", help_path, class: "nav-item nav-link"%>
+        <%= link_to "About", about_path, class: "nav-item nav-link"%>
+        <%= link_to "Contact", contact_path, class: "nav-item nav-link"%>
       </div>
     </div>
   </nav>
