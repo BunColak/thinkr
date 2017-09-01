@@ -1,0 +1,73 @@
+@import "bootstrap";
+
+$primary-color-dark:   #E64A19;
+$primary-color:        #FF5722;
+$primary-color-light:  #FFCCBC;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FFC107;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar related just color and font */
+
+.navbar{
+  background-color: $primary-color!important;
+}
+
+.nav-item{
+  text-decoration: none;
+  color: white!important;
+  font-size: 14pt;
+  &:hover{
+    text-decoration: none;
+    background-color: $primary-color-dark;
+  }
+}
+
+.navbar-brand{
+  text-decoration: none;
+  color:white!important;
+  font-weight: 500;
+  font-size: 21pt;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+/* footer, darker than header, but similar */
+.footer{
+  background-color: $primary-color-dark!important;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  height: 160px;
+  padding: 20px 0px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $divider-color;
+
+  ul{
+    list-style-type: none;
+  }
+
+  // For the big title
+  h2{ color: white}
+
+  a{
+    text-decoration: none;
+    color: $divider-color;
+    &:hover{
+      text-decoration: none;
+      color:$secondary-text-color;
+    }
+  }
+}
