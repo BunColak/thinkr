@@ -1,0 +1,33 @@
+<% provide(:title, "Join Now!") %>
+<div id="signup" class="container">
+  <h2 class="text-center display-3">Join Thinkr. now! </h2>
+  <div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+      <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <div class="form-group">
+        <%= f.label :name, for: "user_name"%>
+        <%= f.text_field :name, class: "form-control", placeholder: "Jane Doe" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, for: "user_email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "jdoe@example.com" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, for: "user_password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password must be longer than 6" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, "Confirmation", for: "user_password_confirmation" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Please confirm your password" %>
+      </div>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

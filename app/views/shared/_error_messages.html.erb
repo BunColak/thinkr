@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <p class="lead">Please correct following:</p>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
