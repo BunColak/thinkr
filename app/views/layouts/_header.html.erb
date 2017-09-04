@@ -6,6 +6,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
+        <% if logged_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @current_user.name%>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to "Profile", user_path(@current_user), class: "dropdown-item" %>
+            <%= link_to "Settings", '#', class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Log Out", logout_path, class: "dropdown-item", method:"delete" %>
+          </div>
+        </li>
+      <% else %>
+        <%= link_to "Log in", login_path, class:"nav-item nav-link"%>
+        <% end%>
         <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
         <%= link_to "Help", help_path, class: "nav-item nav-link"%>
         <%= link_to "About", about_path, class: "nav-item nav-link"%>

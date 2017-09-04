@@ -1,0 +1,22 @@
+<div id="login" class="container">
+  <div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+      <%= form_for(:session, url: login_path) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, for: "user_email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "jdoe@example.com" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, for: "user_password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password must be longer than 6" %>
+      </div>
+
+      <%= f.submit "Login", class: "btn btn-primary" %>
+      <% end %>
+      <br>
+      <p>
+        New user?<%= link_to "Sign up now!", signup_path %>
+      </p>
+    </div>
+  </div>
+</div>
