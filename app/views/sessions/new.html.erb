@@ -1,4 +1,5 @@
 <div id="login" class="container">
+  <h4 class="text-center display-5">Please log in to use Thinkr. </h4>
   <div class="row">
     <div class="col-md-6 ml-auto mr-auto">
       <%= form_for(:session, url: login_path) do |f| %>
@@ -11,7 +12,7 @@
         <%= f.password_field :password, class: "form-control", placeholder: "Password must be longer than 6" %>
       </div>
 
-      <%= f.submit "Login", class: "btn btn-primary" %>
+      <%= f.submit "Login", class: "btn btn-primary text-center text-md-left" %>
       <% end %>
       <br>
       <p>

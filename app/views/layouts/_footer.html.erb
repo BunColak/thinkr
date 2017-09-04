@@ -1,7 +1,7 @@
 <footer>
   <div class="footer">
     <div class="container">
-      <div class="row">
+      <div class="row text-center text-md-left">
         <div class="col-sm-4">
           <h1>Thinkr.</h2>
           <p>Build by RoR</p>
@@ -17,10 +17,24 @@
             <li>
               <%= link_to "Good Stuff", "#", class:"footer-link" %>
             </li>
+            <li>
+              <%= link_to "About", about_path, class: "footer-link"%>
+            </li>
+            <li>
+              <%= link_to "Contact", contact_path, class: "footer-link"%>
+            </li>
           </ul>
         </div>
         <div class="col-sm-4">
-          Social Media icons //TODO
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          <a href="http://facebook.com" target="_blank">Facebook</a>
+          <br>
+          <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          <a href="http://twitter.com" target="_blank">Twitter</a>
+          <br>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <a href="http://instagram.com" target="_blank">Instagram</a>
+          <br>
         </div>
       </div>
     </div>
