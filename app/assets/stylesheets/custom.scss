@@ -2,14 +2,28 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-$primary-color-dark: #E64A19;
-$primary-color: #FF5722;
-$primary-color-light: #FFCCBC;
-$primary-color-text: #FFFFFF;
-$accent-color: #FFC107;
+$color-primary-0: #AD956B;	// Main Primary color */
+$color-primary-1: #FBEDD4;
+$color-primary-2: #D0BB98;
+$color-primary-3: #8A724A;
+$color-primary-4: #725729;
+
+$color-secondary-1-0: #ADAC6B;	// Main Secondary color (1) */
+$color-secondary-1-1: #FBFAD4;
+$color-secondary-1-2: #D0CF98;
+$color-secondary-1-3: #8A894A;
+$color-secondary-1-4: #727129;
+
+$color-secondary-2-0: #A4656F;	// Main Secondary color (2) */
+$color-secondary-2-1: #EDC8CE;
+$color-secondary-2-2: #C58F98;
+$color-secondary-2-3: #83464F;
+$color-secondary-2-4: #6C2732;
+
 $primary-text-color: #212121;
 $secondary-text-color: #757575;
 $divider-color: #BDBDBD;
+
 
 html,body {
   margin: 0;
@@ -38,7 +52,7 @@ html,body {
 
 /* Navbar related just color and font */
 .navbar {
-  background-color: $primary-color!important;
+  background-color: $color-primary-0!important;
 }
 
 .nav-item {
@@ -48,7 +62,7 @@ html,body {
 
   &:hover {
     text-decoration: none;
-    background-color: $primary-color-dark;
+    background-color: $color-primary-3;
   }
 }
 
@@ -71,18 +85,22 @@ html,body {
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: $primary-color-dark;
+    background-color: $color-primary-3;
   }
 }
 
 .dropdown-item{
   color: $primary-text-color!important;
   font-size: 14pt;
+
+  &:active{
+    background-color: $color-primary-3;
+  }
 }
 
 /* footer, darker than header, but similar */
 .footer {
-  background-color: $primary-color-dark!important;
+  background-color: $color-primary-3!important;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -127,7 +145,7 @@ html,body {
 
   .jumbotron {
     width: 100%;
-    background-color: $primary-color-light;
+    background-color: $color-primary-2;
     margin: 40px 0;
   }
 
@@ -135,13 +153,13 @@ html,body {
     text-decoration: none;
     padding: 10px 10px;
     border-radius: 5px 5px;
-    background-color: $primary-color;
-    border-color: $primary-color;
+    background-color: $color-primary-0;
+    border-color: $color-primary-0;
     color: whitesmoke;
     font-weight: bold;
 
     &:hover {
-      background-color: $primary-color-dark;
+      background-color: $color-primary-3;
     }
   }
 }
