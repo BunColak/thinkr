@@ -13,15 +13,15 @@
   <body>
     <div class="wrapper">
       <%= render 'layouts/header' %>
-      <div class="container">
-        <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %> main-flash"><%= message %></div>
-        <% end %>
-      </div>
       <div class="content">
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %> main-flash"><%= message %></div>
+          <% end %>
+        </div>
         <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
     </div>
-    </body>
+  </body>
 </html>

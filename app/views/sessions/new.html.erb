@@ -1,5 +1,10 @@
+<% if logged_in?  %>
+<%= flash[:info] = "Already logged in!"%>
+<% controller.redirect_to root_url%>
+<% end %>
 <div id="login" class="container">
-  <h4 class="text-center display-5">Please log in to use Thinkr. </h4>
+  <h4 class="text-center display-5">Please log in to use Thinkr.
+  </h4>
   <div class="row">
     <div class="col-md-6 ml-auto mr-auto">
       <%= form_for(:session, url: login_path) do |f| %>
@@ -10,6 +15,12 @@
       <div class="form-group">
         <%= f.label :password, for: "user_password" %>
         <%= f.password_field :password, class: "form-control", placeholder: "Password must be longer than 6" %>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          Remember me
+        </label>
       </div>
 
       <%= f.submit "Login", class: "btn btn-primary text-center text-md-left" %>
