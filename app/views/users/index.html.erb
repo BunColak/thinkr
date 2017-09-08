@@ -9,6 +9,7 @@
       <% if current_user.admin? and current_user != user%>
         | <%= link_to "Delete User", user, method: :delete,
                                   data: {confirm: "Are you sure to delete this user?"}%>
+           | <%= link_to "Edit User", edit_user_path(user) %>
       <% end %>
     </li>
     <% end %>

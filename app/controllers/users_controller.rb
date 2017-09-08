@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only:[:edit, :update, :show, :index]
+  before_action :logged_in_user, only:[:edit, :update, :show, :index, :destroy]
+  before_action :admin, only:[:destroy, :update, :edit]
   before_action :correct_user, only:[:edit, :update]
-  before_action :admin, only:[:destroy]
 
   def index
     @user = User.paginate(page: params[:page], per_page: 10)
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 
     def correct_user
        @user = User.find(params[:id])
-       unless @user == current_user
+       unless (@user == current_user || current_user.admin?)
          flash[:warning] = "You don't have permission to do that!"
          redirect_to(root_path)
        end
