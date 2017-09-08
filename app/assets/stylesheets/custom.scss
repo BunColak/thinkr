@@ -169,3 +169,29 @@ html,body {
     border-color:red;
   }
 }
+
+.gravatar-edit{
+  margin: 20px 0;
+}
+
+#users{
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li{
+    margin: 10px 0;
+    .users-link{
+      color: $primary-text-color;
+      font-weight: bold;
+      margin: 0 5px;
+
+      &:hover{
+        color:blue;
+      }
+    }
+
+  }
+}

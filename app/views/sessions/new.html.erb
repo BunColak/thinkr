@@ -2,6 +2,7 @@
 <%= flash[:info] = "Already logged in!"%>
 <% controller.redirect_to root_url%>
 <% end %>
+<% provide(:title,"Log in")%>
 <div id="login" class="container">
   <h4 class="text-center display-5">Please log in to use Thinkr.
   </h4>

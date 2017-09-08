@@ -1,0 +1,37 @@
+<% provide(:title, "Edit User") %>
+<div id class="container">
+  <h4 class="text-center display-5">
+    Please log in to use Thinkr.
+  </h4>
+  <div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+      <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div class="form-group">
+        <%= f.label :name, for: "user_name"%>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, for: "user_email" %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, for: "user_password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password must be longer than 6" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, "Confirmation", for: "user_password_confirmation" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Please confirm your password" %>
+      </div>
+
+      <%= f.submit "Update my account", class: "btn btn-primary text-center text-md-left" %>
+      <% end %>
+      <div class="gravatar-edit">
+        <%= gravatar_for @user %>
+        <a href="http://gravatar.com/emails" target="_blank">Click here to change your Gravatar</a>
+      </div>
+    </div>
+  </div>
+</div>

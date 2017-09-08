@@ -1,0 +1,17 @@
+<% provide(:title, "Users") %>
+<div id="users" class="container">
+  <%= will_paginate @user, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  <ul>
+    <% @user.each do |user|%>
+    <li>
+      <%= gravatar_for user, 80%>
+      <%= link_to user.name, user_path(user), class: "users-link" %>
+      <% if current_user.admin? and current_user != user%>
+        | <%= link_to "Delete User", user, method: :delete,
+                                  data: {confirm: "Are you sure to delete this user?"}%>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+  <%= will_paginate @user, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>

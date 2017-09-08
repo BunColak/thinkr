@@ -23,8 +23,8 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "name should be smaller than 21" do
-    @user.name = "a"*21
+  test "name should be smaller than 31" do
+    @user.name = "a"*31
     assert_not @user.valid?
   end
   # Name tests end
