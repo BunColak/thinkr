@@ -40,8 +40,8 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "email should be smaller than 31" do
-    @user.email = "a"*26 + "@n.co"
+  test "email should be smaller than 41" do
+    @user.email = "a"*36 + "@n.co"
     assert_not @user.valid?
   end
 

@@ -11,7 +11,9 @@ User.create!(
   email: "bunyamincolak@gmail.com",
   password: "element20",
   password_confirmation: "element20",
-  admin: true
+  admin: true,
+  activated: true,
+  activated_at: Time.zone.now
 )
 
 #Creates 99 fake accounts
@@ -25,6 +27,8 @@ User.create!(
     name: name,
     email: email,
     password: password,
-    password_confirmation: password_confirmation
+    password_confirmation: password_confirmation,
+    activated: true,
+    activated_at: Time.zone.now
   )
 end
