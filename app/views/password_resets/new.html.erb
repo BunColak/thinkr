@@ -1,0 +1,20 @@
+<% if logged_in?  %>
+<%= flash[:info] = "Already logged in!"%>
+<% controller.redirect_to root_url%>
+<% end %>
+<% provide(:title,"Forgot Password")%>
+<div id="forgot_password" class="container">
+  <h4 class="text-center display-5">Please enter your email address
+  </h4>
+  <div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+      <%= form_for(:password_reset, url: new_password_reset_path) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, for: "user_email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "jdoe@example.com" %>
+      </div>
+      <%= f.submit "Reset Password", class: "btn btn-primary text-center text-md-left" %>
+      <% end %>
+    </div>
+  </div>
+</div>
