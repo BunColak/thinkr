@@ -2,4 +2,4 @@
 
 <p>Welcome to Thinkr. Click the link below to activate your account and enjoy Thinkr :)</p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: CGI.escape(@user.email)) %>
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
