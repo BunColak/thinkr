@@ -8,9 +8,9 @@
   </h4>
   <div class="row">
     <div class="col-md-6 ml-auto mr-auto">
-      <%= form_for(:password_reset, url: new_password_reset_path) do |f| %>
+      <%= form_for(:password_reset, url: password_resets_path) do |f| %>
       <div class="form-group">
-        <%= f.label :email, for: "user_email" %>
+        <%= f.label :email %>
         <%= f.email_field :email, class: "form-control", placeholder: "jdoe@example.com" %>
       </div>
       <%= f.submit "Reset Password", class: "btn btn-primary text-center text-md-left" %>
