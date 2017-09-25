@@ -68,4 +68,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end
 
+  test "if user is destroyed, thoughts should do so" do
+    @user.save
+    @user.thoughts.create!(content: "Hello!")
+    assert_difference 'Thought.count', -1 do
+      @user.destroy
+    end
+  end
+
 end

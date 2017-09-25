@@ -132,7 +132,7 @@ html,body {
 }
 
 /* Home page */
-#home {
+#home-logged-out {
   /* Vertical alignment */
   display: flex;
   flex-direction: column;
@@ -157,6 +157,43 @@ html,body {
     &:hover {
       background-color: $color-primary-3;
     }
+  }
+}
+
+#home-logged-in {
+  .user-name{
+    padding: 10px 0;
+  }
+
+  .btn{
+    width: 200px;
+  }
+
+  textarea{
+    width: 200px;
+    resize: none;
+  }
+
+  .thought{
+    background-color: $color-primary-1;
+    border-radius: 5px 5px;
+    margin: 7px 0;
+    padding: 5px 5px;
+  }
+
+  .thought-time-ago{
+    font-weight: lighter;
+    color: $secondary-text-color;
+  }
+
+  .col-10{
+    padding: 0 !important;
+  }
+
+  .pagination{ padding: 0 20px}
+
+  li{
+    list-style-type: none;
   }
 }
 
@@ -194,4 +231,37 @@ html,body {
     }
 
   }
+}
+
+#profile{
+  h4{
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .profile-photo{
+    margin: 0 auto;
+  }
+
+  ol{
+    list-style-type: none;
+  }
+
+  .thought{
+    background-color: $color-primary-1;
+    border-radius: 5px 5px;
+    margin: 7px 0;
+    padding: 5px 5px;
+  }
+
+  .thought-time-ago{
+    font-weight: lighter;
+    color: $secondary-text-color;
+  }
+
+  .col-10{
+    padding: 0 !important;
+  }
+
+  .pagination{ padding: 0 20px}
 }

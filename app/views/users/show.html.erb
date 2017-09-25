@@ -1,5 +1,19 @@
 <%provide(:title,@user.name) %>
-<div class="container">
-  <%= gravatar_for @user %>
-  <%= @user.name %>
+<div id="profile" class="container">
+  <div class="row">
+    <div class="col-md-4 text-center text-md-left">
+      <div class="row text-center">
+        <%= gravatar_for @user, size: 150%>
+      </div>
+      <div class="row">
+        <h4><strong><%=@user.name%></strong></h4>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <ol class="thoughts">
+        <%= render @thoughts %>
+      </ol>
+      <%= will_paginate @thoughts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+  </div>
 </div>

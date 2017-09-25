@@ -1,8 +1,8 @@
 module UsersHelper
 
-  def gravatar_for user, size = 150
+  def gravatar_for(user, size: 80)
     gravatar_path = Digest::MD5::hexdigest(user.email.downcase)
-    gravatar_url = "https://www.gravatar.com/avatar/" + gravatar_path + "size"
-    image_tag gravatar_url, alt: user.name
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_path}?s=#{size}"
+    image_tag gravatar_url, alt: user.name, class: "img-fluid rounded"
   end
 end

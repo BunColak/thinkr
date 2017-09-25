@@ -1,8 +1,27 @@
 <% provide(:title, "Home") %>
-<div id="home" class="container text-center">
+<% if logged_in?%>
+  <div id="home-logged-in" class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="thought_form">
+          <%= render 'shared/thought_form' %>
+        </section>
+      </div>
+      <div class="col-md-8">
+        <h3>Thoughts!</h3>
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+  </div>
+<% else %>
+<div id="home-logged-out" class="container text-center">
   <div class="jumbotron">
     <h1 class="display-2">Thinkr.</h1>
     <p class="lead">A twitter clone made for educational purposes</p>
     <%= link_to "Sign Up", signup_path, class: "button"%>
   </div>
 </div>
+<% end %>

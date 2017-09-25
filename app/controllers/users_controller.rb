@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @thoughts = @user.thoughts.paginate(page: params[:page], per_page: 10)
   end
 
   def create
@@ -61,13 +62,6 @@ class UsersController < ApplicationController
          flash[:warning] = "You don't have permission to do that!"
          redirect_to(root_path)
        end
-    end
-
-    def logged_in_user
-      unless logged_in?
-        flash[:warning] = "Please log in!"
-        redirect_to login_path
-      end
     end
 
     def admin
