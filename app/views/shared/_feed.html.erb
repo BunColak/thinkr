@@ -1,0 +1,4 @@
+<% if @thought_feed.any? %>
+  <%= render @thought_feed %>
+  <%= will_paginate @thought_feed, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<% end %>
