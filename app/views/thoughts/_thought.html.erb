@@ -6,6 +6,9 @@
     <div class="col-10 d-flex flex-column justify-content-center">
       <span><strong><%= link_to thought.user.name, user_path(thought.user) %></strong></span>
       <span class="thought-content"><%= thought.content %></span>
+      <% if thought.picture? %>
+        <span class="thought-picture"><%= image_tag thought.picture.url%></span>
+      <% end %>
       <span class="thought-time-ago ">Thougt it <%= time_ago_in_words(thought.created_at) %> ago</span>
       <div class="thought-actions container-fluid">
         <div class="row">
@@ -15,7 +18,7 @@
           <div class="col-4 col-md-2 thought-like">
             <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</a>
           </div>
-          <% if current_page?("/") || correct_user? || current_user.admin? %>
+          <% if current_user?(thought.user) || current_user.admin? %>
           <div class="col-4 col-md-2 thought-like">
             <%= link_to thought, method: :delete,data: {confirm: "Are you sure to delete this thought?"} do %>
               <i class="fa fa-trash-o" aria-hidden="true"></i> Delete

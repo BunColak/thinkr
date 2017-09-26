@@ -25,7 +25,7 @@ class ThoughtsController < ApplicationController
 
   private
     def thought_params
-      params.require(:thought).permit(:content)
+      params.require(:thought).permit(:content, :picture)
     end
 
     def correct_user?
