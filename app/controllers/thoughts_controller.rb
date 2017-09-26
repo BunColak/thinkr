@@ -7,18 +7,28 @@ class ThoughtsController < ApplicationController
       flash[:success] = "Thought posted."
       redirect_to root_path
     else
-      render 'static_pages/home'
+      flash[:warning]="Please enter a thought."
+      redirect_to root_path
     end
   end
 
   def destroy
-    Thought.find(params[:id]).destroy
-    flash[:success] = "Thought deleted."
-    redirect_to root_path
+    if correct_user? || current_user.admin?
+      Thought.find(params[:id]).destroy
+      flash[:success] = "Thought deleted."
+      redirect_to root_path
+    else
+      flash[:danger] = "Not permitted."
+      redirect_to root_path
+    end
   end
 
   private
     def thought_params
       params.require(:thought).permit(:content)
+    end
+
+    def correct_user?
+      current_user == Thought.find(params[:id]).user
     end
 end

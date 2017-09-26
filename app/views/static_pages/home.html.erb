@@ -2,7 +2,7 @@
 <% if logged_in?%>
   <div id="home-logged-in" class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 text-md-left text-center">
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
@@ -11,7 +11,8 @@
         </section>
       </div>
       <div class="col-md-8">
-        <h3>Thoughts!</h3>
+        <hr class="d-md-none">
+        <h3 class="text-md-left text-center">Thoughts!</h3>
         <%= render 'shared/feed' %>
       </div>
     </div>
