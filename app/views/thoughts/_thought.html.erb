@@ -7,7 +7,7 @@
       <span><strong><%= link_to thought.user.name, user_path(thought.user) %></strong></span>
       <span class="thought-content"><%= thought.content %></span>
       <% if thought.picture? %>
-        <span class="thought-picture"><%= image_tag thought.picture.url%></span>
+        <span class="thought-picture"><%= image_tag thought.picture.url, class: "img-fluid"%></span>
       <% end %>
       <span class="thought-time-ago ">Thougt it <%= time_ago_in_words(thought.created_at) %> ago</span>
       <div class="thought-actions container-fluid">
