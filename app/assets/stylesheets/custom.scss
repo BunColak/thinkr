@@ -162,11 +162,16 @@ html,body {
 
 #home-logged-in {
   .user-name{
-    padding: 10px 0;
+    padding: 10px 0 0 0;
+  }
+
+  .stats-home{
+    margin: 10px 0;
   }
 
   .btn{
     width: 200px;
+    margin: 5px 0;
   }
 
   textarea{
@@ -231,7 +236,7 @@ html,body {
   margin: 20px 0;
 }
 
-#users{
+.users, #users{
   ul{
     margin: 0;
     padding: 0;
@@ -303,4 +308,20 @@ html,body {
     .col-md-2, .col-4{ padding : 0}
   }
 
+
+}
+
+#follow_form{
+  .btn{ width: 100%;}
+}
+
+#feed{
+  ul{
+    width: 100%;
+  }
+  .pagination{
+    width: 100%;
+    padding: 0!important;
+    li{max-width: 2em;}
+  }
 }

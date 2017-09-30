@@ -1,0 +1,12 @@
+one:
+  follower: benji
+  followed: user_2
+two:
+  follower: benji
+  followed: huseyin
+three:
+  follower: user_2
+  followed: benji
+four:
+  follower: archer
+  followed: benji

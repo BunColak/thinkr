@@ -14,6 +14,21 @@ mahmut:
   activated: true
   activated_at: <%= Time.zone.now %>
 
+huseyin:
+  name: Huseyin Hasan
+  email: hasan@huseyin.com
+  password_digest: <%= User.digest "password" %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+archer:
+  name: Archer Hasan
+  email: archer@huseyin.com
+  password_digest: <%= User.digest "password" %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+
 <% 50.times do |n| %>
 
 user_<%= n %>:

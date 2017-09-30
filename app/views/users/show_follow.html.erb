@@ -1,4 +1,4 @@
-<%provide(:title,@user.name) %>
+<%provide(:title,@title) %>
 <div id="profile" class="container">
   <div class="row">
     <div class="col-md-3 text-center text-md-left">
@@ -9,13 +9,14 @@
       </section>
     </div>
     <div class="col-md-9">
-      <%= render 'follow_form' if logged_in? %>
       <hr class="d-md-none">
-      <h3 class="text-md-left text-center">Thoughts!</h3>
-      <ol class="thoughts">
-        <%= render @thoughts %>
-      </ol>
-      <%= will_paginate @thoughts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      <h3 class="text-md-left text-center"><%= @title %>!</h3>
+      <% if @users.any? %>
+        <ul class="users" >
+          <%= render @users %>
+        </ul>
+        <%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      <% end %>
     </div>
   </div>
 </div>
