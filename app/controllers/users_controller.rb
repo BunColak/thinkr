@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @thoughts = @user.thoughts.paginate(page: params[:page], per_page: 10)
+    @thought = current_user.thoughts.build if logged_in?
   end
 
   def create
