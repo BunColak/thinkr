@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927195011) do
+ActiveRecord::Schema.define(version: 20171001171521) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "thought_id"
+    t.integer "liked_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["liked_id"], name: "index_likes_on_liked_id"
+    t.index ["thought_id", "liked_id"], name: "index_likes_on_thought_id_and_liked_id", unique: true
+    t.index ["thought_id"], name: "index_likes_on_thought_id"
+  end
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
