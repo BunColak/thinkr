@@ -16,7 +16,18 @@
             <a href="#"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
           </div>
           <div class="col-4 col-md-2 thought-like">
-            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</a>
+            <% if current_user.likings.include?(thought) %>
+              <%= link_to like_path(id: thought.id), method: :delete do %>
+                <i class= "fa fa-thumbs-up"></i> Unlike
+              <%end%>
+            <% else %>
+              <%= link_to likes_path(thought_id: thought.id), method: :post do %>
+                <i class= "fa fa-thumbs-o-up"></i> Like
+              <%end%>
+            <% end %>
+            <% unless thought.likes.count == 0 %>
+              <span id="like-count" class="badge badge-success"><%= thought.likes.count %></span>
+            <% end %>
           </div>
           <% if current_user?(thought.user) || current_user.admin? %>
           <div class="col-4 col-md-2 thought-like">
